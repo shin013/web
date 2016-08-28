@@ -5,24 +5,88 @@
 <title>Flexbox</title>
 <link rel="stylesheet" href="https://github.com/filipelinhares/ress/blob/master/ress.css" />
 <style type="text/css">
-  ul#gnav{
-    display: flex;
-    /*justify-content:flex-end; 右揃え*/
-    justify-content:center;
-    list-style-type: none;
-  }
-  ul#gnav a{
-    background: #9fb7d4;
-    color: #fff;
-    display:block;
-    margin: 5px;
-    padding:10px ;
-    text-decoration:none ;
-  }
+
+.small{font-size:small;}
+
+#gnav, #contents1{
+  display: flex;
+  /*justify-content:flex-end; 右揃え*/
+  justify-content:center;
+  list-style-type: none;
+}
+
+#gnav a , section{
+  /*background: #9fb7d4;*/
+  color: #fff;
+  display:block;
+  margin: 5px;
+  padding:10px ;
+  text-decoration:none ;
+}
+
+#column1{
+  order:1; width:10px;
+  background-color:red; }
+#column2{
+  order:2; width:20px; 
+  background-color:green;}
+#column3{
+  order:3; width:30px; 
+  background-color:blue;}
+#column4{
+  order:4; width:40px; 
+  background-color:purple;}
+#column5{
+  order:5; width:50px; 
+  background-color:orange;}
+#column6{
+  order:6; width:50px; 
+  background-color:pink;}
+#column7{
+  order:7; width:50px; 
+  background-color:brown;}
+#column8{
+  order:8; width:50px; 
+  background-color:salmon;}
+#column9{
+  order:9; width:50px; 
+  background-color:aqua;}
+#column10{
+  order:10; width:50px; 
+  background-color:black;}
+
+#contents2{
+display:flex;
+/*水平方向 LTR 左揃え
+flex-direction:row; */
+/*水平方向 RTL 右揃え*/
+flex-direction:row-reverse;
+/*縦方向 TTB 左揃え
+flex-direction:column;*/
+/*縦方向 BTT 左揃え
+flex-direction:column-reverse;*/
+}
+
+#contents3{
+display:flex;
+width:500px;
+/*flex-wrap:nowrap;枠内,横一列*/
+flex-wrap:wrap;/*枠内,折返,TTB*/
+flex-wrap:wrap-reverse;/*枠内,折返,BTT*/
+}
+
+#contents4{
+display:flex;
+width:500px;
+flex-flow:row-reverse wrap;
+}
+  
 </style>
 </head>
 
 <body>
+
+<h1>Flexbox <span class="small">practice - 2016.08.27.Sun</span></h1>
 
 <nav>
 	<ul id="gnav">
@@ -32,6 +96,109 @@
   	<li><a href="">Menu4</a></li>
 	</ul>
 </nav>
+
+<div id="contents1">
+
+  <section id="column1">
+  1
+  </section>
+  <section id="column2">
+  ２
+  </section>
+  <section id="column3">
+  ３
+  </section>
+  
+</div>
+
+
+<h2>flex-direction</h2>
+<div id="contents2">
+  <section id="column1">
+  1
+  </section>
+  <section id="column2">
+  ２
+  </section>
+  <section id="column3">
+  ３
+  </section>
+  <section id="column4">
+  4
+  </section>
+  <section id="column5">
+  5
+  </section>
+  
+</div>
+
+<h2>flex-wrap</h2>
+<div id="contents3">
+  <section id="column1">
+  1
+  </section>
+  <section id="column2">
+  ２
+  </section>
+  <section id="column3">
+  ３
+  </section>
+  <section id="column4">
+  4
+  </section>
+  <section id="column5">
+  5
+  </section>
+  <section id="column6">
+  6
+  </section>
+  <section id="column7">
+  7
+  </section>  
+  <section id="column8">
+  8
+  </section>
+  <section id="column9">
+  9
+  </section>    
+  <section id="column10">
+  10
+  </section>    
+</div>
+
+<h2>flex-flow (flex-direction + flex-wrap)</h2>
+<div id="contents4">
+  <section id="column1">
+  1
+  </section>
+  <section id="column2">
+  ２
+  </section>
+  <section id="column3">
+  ３
+  </section>
+  <section id="column4">
+  4
+  </section>
+  <section id="column5">
+  5
+  </section>
+  <section id="column6">
+  6
+  </section>
+  <section id="column7">
+  7
+  </section>  
+  <section id="column8">
+  8
+  </section>
+  <section id="column9">
+  9
+  </section>    
+  <section id="column10">
+  10
+  </section>    
+</div>
 
 </body>
 </html>
